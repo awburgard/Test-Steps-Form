@@ -1,9 +1,8 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form'
-import InputGroup from 'react-bootstrap/InputGroup'
+import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import Card from 'react-bootstrap/Card'
-import ListGroup from 'react-bootstrap/ListGroup'
+
 
 class TestStepsForm extends React.Component {
     constructor(props) {
@@ -35,34 +34,20 @@ class TestStepsForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <>
-                    <Jumbotron>
-                        Test Steps
-                    </Jumbotron>
-                    <Form onSubmit={this.handleSubmit}>
-                        <InputGroup>
-                            <Form.Control required as="textarea" rows="3" value={this.state.assumptions} onChange={this.handleChange('assumptions')} />
-                            <Form.Control required as="textarea" rows="3" value={this.state.data} onChange={this.handleChange('data')} />
-                            <Form.Control required as="textarea" rows="3" value={this.state.precondition} onChange={this.handleChange('precondition')} />
-                            <Form.Control required as="textarea" rows="3" value={this.state.test_steps} onChange={this.handleChange('test_steps')} />
-                            <Form.Control required as="textarea" rows="3" value={this.state.results} onChange={this.handleChange('results')} />
-                            <Form.Control as="textarea" rows="3" value={this.state.comments} onChange={this.handleChange('comments')} />
-                        </InputGroup>
-                        <Form.Control variant="primary" type="submit" value="Submit" />
-                    </Form>
-                </>
-                <Card text="success">
-                    <ListGroup>
-                        <ListGroup.Item>{this.state.assumptions}</ListGroup.Item>
-                        <ListGroup.Item>{this.state.data}</ListGroup.Item>
-                        <ListGroup.Item>{this.state.precondition}</ListGroup.Item>
-                        <ListGroup.Item>{this.state.test_steps}</ListGroup.Item>
-                        <ListGroup.Item>{this.state.results}</ListGroup.Item>
-                        <ListGroup.Item>{this.state.comments}</ListGroup.Item>
-                    </ListGroup>
-                </Card>
-            </div>
+            <Container>
+                <Jumbotron>
+                    <h1>Test Steps</h1>
+                </Jumbotron>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Control required as="textarea" rows="3" value={this.state.assumptions} onChange={this.handleChange('assumptions')} />
+                    <Form.Control required as="textarea" rows="3" value={this.state.data} onChange={this.handleChange('data')} />
+                    <Form.Control required as="textarea" rows="3" value={this.state.precondition} onChange={this.handleChange('precondition')} />
+                    <Form.Control required as="textarea" rows="3" value={this.state.test_steps} onChange={this.handleChange('test_steps')} />
+                    <Form.Control required as="textarea" rows="3" value={this.state.results} onChange={this.handleChange('results')} />
+                    <Form.Control as="textarea" rows="3" value={this.state.comments} onChange={this.handleChange('comments')} />
+                    <Form.Control type="submit" value="Submit" />
+                </Form>
+            </Container>
         );
     }
 }

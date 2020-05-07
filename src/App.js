@@ -4,10 +4,8 @@ import TestStepsForm from './Form';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
       <TestStepsForm />
-      </header>
     </div>
   );
 }
