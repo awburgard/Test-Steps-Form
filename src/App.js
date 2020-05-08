@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
 import TestStepsForm from './Form';
+import { Container } from '@material-ui/core';
+
 
 function App() {
   return (
-    <div>
+    <Container>
       <TestStepsForm />
-    </div>
+    </Container>
   );
 }
 
