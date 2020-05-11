@@ -1,10 +1,9 @@
 import React from 'react';
-import { List, ListItem, ListItemText } from '@material-ui/core';
+import { ListItem, ListItemText } from '@material-ui/core';
 
-function Display(props) {
-    const {assumptions, data, precondition, test_steps, results, comments} = props;
+function Display({assumptions, data, precondition, test_steps, results, comments}) {
     return (
-        <List>
+        <>
         <ListItem button>
             <ListItemText>{assumptions}</ListItemText>
         </ListItem>
@@ -23,7 +22,7 @@ function Display(props) {
         <ListItem button>
             <ListItemText>{comments}</ListItemText>
         </ListItem>
-    </List>
+        </>
     );
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
+import Review from './Review'
 import { Button, TextField, Grid, Typography } from '@material-ui/core';
-import Display from './Display';
 
 class TestStepsForm extends React.Component {
     constructor(props) {
@@ -28,45 +28,38 @@ class TestStepsForm extends React.Component {
     handleSubmit(event) {
         alert(` Test steps were submitted!`);
         event.preventDefault();
-    }
+        }
 
     render() {
         return (
             <div>
                 <Grid>
-                    <Typography container variant="h3" justify="center" alignItems="center" alignContent="center">Test Steps</Typography>
+                    <Typography container="true" variant="h3" justify="center">Test Steps</Typography>
                 </Grid>
                 <Grid container spacing={1}>
-                    <Grid container item lg={6}>
-                        <TextField required id="standard-required" label="Required" variant="filled" fullWidth="true" value={this.state.assumptions} onChange={this.handleChange('assumptions')} />
+                    <Grid container item lg={12}>
+                        <TextField required  label="Required" variant="filled" fullWidth={true} value={this.state.assumptions} onChange={this.handleChange('assumptions')} />
                     </Grid>
-                    <Grid container item lg={6}>
-                        <TextField required id="standard-required" label="Required" variant="filled" fullWidth="true" value={this.state.data} onChange={this.handleChange('data')} />
+                    <Grid container item lg={12}>
+                        <TextField required  label="Required" variant="filled" fullWidth={true} value={this.state.data} onChange={this.handleChange('data')} />
                     </Grid>
-                    <Grid container item lg={6}>
-                        <TextField required id="standard-required" label="Required" variant="filled" fullWidth="true" value={this.state.precondition} onChange={this.handleChange('precondition')} />
+                    <Grid container item lg={12}>
+                        <TextField required  label="Required" variant="filled" fullWidth={true} value={this.state.precondition} onChange={this.handleChange('precondition')} />
                     </Grid>
-                    <Grid container item lg={6}>
-                        <TextField required id="standard-required" label="Required" variant="filled" fullWidth="true" value={this.state.test_steps} onChange={this.handleChange('test_steps')} />
+                    <Grid container item lg={12}>
+                        <TextField required  label="Required" variant="filled" fullWidth={true} value={this.state.test_steps} onChange={this.handleChange('test_steps')} />
                     </Grid>
-                    <Grid container item lg={6}>
-                        <TextField required id="standard-required" label="Required" variant="filled" fullWidth="true" value={this.state.results} onChange={this.handleChange('results')} />
+                    <Grid container item lg={12}>
+                        <TextField required  label="Required" variant="filled" fullWidth={true} value={this.state.results} onChange={this.handleChange('results')} />
                     </Grid>
-                    <Grid container item lg={6}>
-                        <TextField variant="filled" fullWidth="true" value={this.state.comments} onChange={this.handleChange('comments')} />
+                    <Grid container item lg={12}>
+                        <TextField variant="filled" fullWidth={true} value={this.state.comments} onChange={this.handleChange('comments')} />
                     </Grid>
                     <Grid container item xl={12}>
                         <Button variant="contained" color="primary" onClick={this.handleSubmit}>Submit</Button>
                     </Grid>
                 </Grid>
-                <Display 
-                    assumptions={this.state.assumptions}
-                    data={this.state.data}
-                    precondition={this.state.precondition}
-                    test_steps={this.state.test_steps}
-                    results={this.state.results}
-                    comments={this.state.comments}
-                />
+                <Review assumptions={this.state.assumptions} data={this.state.data} precondition={this.state.precondition} test_steps={this.state.test_steps} results={this.state.results} comments={this.state.comments}/>
             </div>
         );
     }
